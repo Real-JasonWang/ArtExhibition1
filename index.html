@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weifeng Wang's Art Exibition #1</title>
     <style>
-        /* 使用Google Fonts的Roboto字体 */
+        
         @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
         body,
@@ -22,7 +22,6 @@
             justify-content: center;
             gap: 40px;
             padding: 80px;
-            /* 使用半透明的白色背景 */
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(8px);
         }
@@ -30,10 +29,8 @@
         .gallery img {
             width: 100%;
             max-width: 300px;
-            /* 使用圆角和边框 */
             border-radius: 20px;
             border: 2px solid rgba(255, 255, 255, 0.5);
-            /* 使用阴影和光线效果 */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
         }
@@ -50,8 +47,6 @@
             }
         }
 
-        /* 添加一个macos风格的标题栏，使用Puppertino框架 */
-        /* 引入Puppertino的样式表 */
         @import url('https://unpkg.com/puppertino/dist/puppertino.min.css');
 
         /* 定义标题栏的样式 */
@@ -61,7 +56,6 @@
             height: 50px;
             background-color: #ebebeb;
             border-bottom: 1px solid #d1d1d1;
-            /* 使用渐变色作为标题的背景 */
             background-image: linear-gradient(to right, #c272f3, #42b0ed);
             color: white;
             font-weight: bold;
@@ -78,8 +72,6 @@
             text-align: center;
         }
 
-
-        /* 当鼠标悬停在图片上时，显示文字描述 */
         .gallery img:hover+.description {
             display: block;
         }
@@ -89,12 +81,10 @@
             background-color: rgba(255, 255, 255, 0.7);
         }
 
-        /* 添加动画效果 */
         .modal-animation {
             transition: transform 0.3s ease;
         }
 
-        /* 当鼠标悬停在弹出窗口上时 */
         .modal-animation:hover {
             transform: scale(1.05);
             cursor: pointer;
@@ -103,14 +93,10 @@
 </head>
 
 <body>
-    <!-- 添加一个macos风格的标题栏，显示个人绘画艺术展的标题 -->
     <div class="title-bar">
         🔥Weifeng Wang's Art Exibition #1 :: 😈Chao$ & InnerPeacE👼
     </div>
     <div class="gallery">
-        <!-- 图片示例，需要替换为您的艺术作品 -->
-        <!-- 在每个图片元素后添加一个div元素，用来存放文字描述 -->
-        <!-- 文字描述包括时间、流派和描述和解析，可以根据您的实际情况修改 -->
         <img src="https://raw.githubusercontent.com/Real-JasonWang/ArtExhibition1/main/Art1_1.jpg" alt="Artwork 1">
         <div class="floatcontent">
             This painted mask, a harmonious blend of vibrant hues and intricate designs, evokes a profound sense of
@@ -140,38 +126,24 @@
             White floral motifs on the adjacent wall complement the ukulele’s vivacity, culminating in a visual symphony
             that celebrates life’s vibrant melodies and rhythms.
         </div>
-        <!-- 更多艺术作品 -->
     </div>
 
     <script>
-        /* 使用js代码来动态地从unsplash获取图片的url，并将它们赋值给body元素的background-image属性 */
-        /* 定义一个函数，用来生成一个随机的unsplash图片的url */
         function getRandomUnsplashUrl() {
-            // 定义图片的宽度和高度
             var width = window.innerWidth;
             var height = window.innerHeight;
-            // 定义图片的主题，可以根据您的喜好修改
             var topic = "art";
-            // 定义图片的url格式，参考unsplash的文档
             var url = "https://source.unsplash.com/" + width + "x" + height + "/?" + topic;
-            // 返回图片的url
             return url;
         }
 
-        /* 定义一个函数，用来将body元素的background-image属性设置为随机的unsplash图片 */
         function setBodyBackgroundImage() {
-            // 获取body元素
             var body = document.body;
-            // 获取一个随机的unsplash图片的url
             var url = getRandomUnsplashUrl();
-            // 将body元素的background-image属性设置为该url
             body.style.backgroundImage = "url('" + url + "')";
         }
 
-
-        // 当页面加载完成后，调用setBodyBackgroundImage函数，将body元素的背景图片设置为随机的unsplash图片
         window.addEventListener("load", setBodyBackgroundImage);
-        // 当页面大小改变时，重新调用setBodyBackgroundImage函数，以适应新的页面尺寸
         window.addEventListener("resize", setBodyBackgroundImage);
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -197,12 +169,12 @@
             modal.style.zIndex = '1000';
 
             var modalContent = document.createElement('div');
-            modalContent.className = 'modal-animation'; // 应用动画效果
+            modalContent.className = 'modal-animation';
             modalContent.style.backgroundColor = 'white';
             modalContent.style.padding = '25px';
             modalContent.style.borderRadius = '20px';
             modalContent.style.width = '80%';
-            modalContent.innerHTML = floatcontent; // 使用innerHTML以支持包含HTML的内容
+            modalContent.innerHTML = floatcontent;
 
             var closeButton = document.createElement('button');
             closeButton.textContent = 'Close';
